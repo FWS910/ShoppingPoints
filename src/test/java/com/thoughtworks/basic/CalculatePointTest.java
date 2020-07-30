@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class CalculatePointTest {
 
+// 需求一
     @Test
     public void should_return_120_point_when_calculate_given_amount_is_120() {
         //given
@@ -23,6 +24,24 @@ public class CalculatePointTest {
         //then
         Assert.assertEquals(totalPoint, 120);
     }
+// 需求二
+    @Test
+    public void should_return_120_point_when_calculate_given_include_promotions_goods_and_amount_is_100() {
+        //given
+        Calculateintegral calculatePoint = new Calculateintegral();
+        ArrayList<Goods> goodsList = new ArrayList<Goods>();
+        Goods WATERMELON = new Goods("watermelon", new BigDecimal(70));
+        Goods APPLE = new Goods("APPLE", new BigDecimal(20));
+        Goods Detergent = new Goods("Tomato", new BigDecimal(10));
+        goodsList.add(WATERMELON);
+        goodsList.add(APPLE);
+        goodsList.add(Detergent);
+        //when
+        int totalPoint = calculatePoint.calculate(goodsList);
+        //then
+        Assert.assertEquals(totalPoint, 120);
+    }
+
 
 
 }
