@@ -54,7 +54,19 @@ public class CalculatePointTest {
         //then
         Assert.assertEquals(totalPoint, 1067);
     }
-
+    //    需求三 - 2
+    @Test
+    public void should_return_3000_point_when_calculate_given_include_promotions_goods_and_amount_is_2000() {
+        //given
+        Calculateintegral calculatePoint = new Calculateintegral();
+        ArrayList<Goods> goodsList = new ArrayList<Goods>();
+        Goods TELEVISION = new Goods("TELEVISION", new BigDecimal(2000));
+        goodsList.add(TELEVISION);
+        //when
+        int totalPoint = calculatePoint.calculate(goodsList);
+        //then
+        Assert.assertEquals(totalPoint, 3000);
+    }
 
 
 
